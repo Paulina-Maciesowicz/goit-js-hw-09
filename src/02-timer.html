@@ -10,32 +10,37 @@
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
   </head>
-  <body>
-    <p><a href="index.html">Go back</a></p>
+  <section class="stylebody">
+    <body>
+      <p class="stylego"><a class="color" href="index.html">Go back</a></p>
+      <container class="styletasktwo">
+        <input class="styledata" type="text" id="datetime-picker" />
+        <button class="js-btn" style="cursor: pointer" type="button" data-start>
+          Start
+        </button>
 
-    <input type="text" id="datetime-picker" />
-    <button class="js-btn" type="button" data-start>Start</button>
+        <div class="timer">
+          <div class="field">
+            <span class="value-days" data-days>00</span>
+            <span class="label">Days</span>
+          </div>
+          <div class="field">
+            <span class="value-hours" data-hours>00</span>
+            <span class="label">Hours</span>
+          </div>
+          <div class="field">
+            <span class="value-minutes" data-minutes>00</span>
+            <span class="label">Minutes</span>
+          </div>
+          <div class="field">
+            <span class="value-seconds" data-seconds>00</span>
+            <span class="label">Seconds</span>
+          </div>
+        </div>
 
-    <div class="timer">
-      <div class="field">
-        <span class="value-days" data-days>00</span>
-        <span class="label">Days</span>
-      </div>
-      <div class="field">
-        <span class="value-hours" data-hours>00</span>
-        <span class="label">Hours</span>
-      </div>
-      <div class="field">
-        <span class="value-minutes" data-minutes>00</span>
-        <span class="label">Minutes</span>
-      </div>
-      <div class="field">
-        <span class="value-seconds" data-seconds>00</span>
-        <span class="label">Seconds</span>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
-    <script src="js/02-timer.js" type="module"></script>
-  </body>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+        <script src="js/02-timer.js" type="module"></script>
+      </container>
+    </body>
+  </section>
 </html>

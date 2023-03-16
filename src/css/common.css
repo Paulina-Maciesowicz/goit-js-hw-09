@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --color-primary: purple;
+  --color-secondary: rgb(175, 175, 255);
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -8,11 +12,76 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
-  color: #212121;
+  color: #383838;
   line-height: 1.5;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+.stylego {
+  width: 100px;
+  height: 400px;
+  margin-right: 30px;
+}
+.color {
+  color: rgb(58, 58, 58);
+}
+.stylebody {
+  align-items: center;
+
+  background: linear-gradient(
+    to top left,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  height: 1200px;
+  max-width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+.center {
+}
+
+.styletasktwo {
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  box-shadow: 0px 8px 24px 0 rgba(0, 0, 0, 0.3);
+  padding: 100px 100px;
+  text-align: left;
+}
+
+.styledata {
+  height: 50px;
+  width: 180px;
+  padding: 10px;
+  text-align: center;
+  color: var(--color-primary);
+  border-radius: 8px;
+  border: none;
+  background: rgb(180, 246, 255);
+}
+
+.js-btn {
+  height: 50px;
+  width: 180px;
+  border-radius: 8px;
+  border: none;
+  background: rgb(180, 246, 255);
+  box-shadow: 0px 8px 24px 0 rgba(0, 0, 0, 0.4);
+}
+
+.js-btn:hover {
+  background-color: bisque;
+}
+.timer {
+  margin-top: 20px;
+  color: white;
 }
