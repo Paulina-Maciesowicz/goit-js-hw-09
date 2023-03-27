@@ -1,5 +1,5 @@
 const date = new Date();
-const jsBtn = document.querySelector(".js-btn");
+const jsBtn = document.querySelector('.js-btn');
 jsBtn.disabled = true;
 let chooseTime = null;
 let timerId = null;
@@ -12,7 +12,7 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
     if (selectedDates[0] < date) {
-      window.alert("Please choose a date in the future");
+      window.alert('Please choose a date in the future');
       jsBtn.disabled = true;
     } else {
       jsBtn.disabled = false;
@@ -21,7 +21,7 @@ const options = {
   },
 };
 
-flatpickr(document.querySelector("#datetime-picker"), options);
+flatpickr(document.querySelector('#datetime-picker'), options);
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
@@ -49,27 +49,33 @@ console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20
 function counter() {
   const date = new Date();
   const timeObj = convertMs(chooseTime - date);
-  document.querySelector(".value-days").innerHTML = addLeadingZero(
+  document.querySelector('.value-days').innerHTML = addLeadingZero(
     timeObj.days
   );
-  document.querySelector(".value-hours").innerHTML = addLeadingZero(
+  document.querySelector('.value-hours').innerHTML = addLeadingZero(
     timeObj.hours
   );
-  document.querySelector(".value-minutes").innerHTML = addLeadingZero(
+  document.querySelector('.value-minutes').innerHTML = addLeadingZero(
     timeObj.minutes
   );
-  document.querySelector(".value-seconds").innerHTML = addLeadingZero(
+  document.querySelector('.value-seconds').innerHTML = addLeadingZero(
     timeObj.seconds
   );
 }
 
-jsBtn.addEventListener("click", () => {
+jsBtn.addEventListener('click', () => {
   timerId = setInterval(() => {
     jsBtn.disabled = true;
+    const dateNow = new Date();
+    if (chooseTime <= dateNow) {
+      clearInterval(timerId);
+      console.log(`Interval with id ${timerId} has stopped!`);
+      return;
+    }
     counter();
   }, 1000);
 });
 
 function addLeadingZero(value) {
-  return value.toString().padStart(2, "0");
+  return value.toString().padStart(2, '0');
 }
