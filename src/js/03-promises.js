@@ -26,12 +26,12 @@ form.addEventListener('submit', event => {
     const promiseDelay = convertNumberDelay + convertNumberStep * (i - 1);
     createPromise(i, promiseDelay)
       .then(({ number, delay }) => {
-        console.log('✅ Fulfilled promise ${number} in ${delay}ms');
-        Notiflix.Notify.success('✅ Fulfilled promise ${number} in ${delay}ms');
+        console.log(`✅ Fulfilled promise ${number} in ${delay}ms`);
+        Notiflix.Notify.success(`✅ Fulfilled promise ${number} in ${delay}ms`);
       })
       .catch(({ number, delay }) => {
-        console.log('❌ Rejected promise ${number} in ${delay}ms');
-        Notiflix.Notify.failure('❌ Rejected promise ${number} in ${delay}ms');
+        console.log(`❌ Rejected promise ${number} in ${delay}ms`);
+        Notiflix.Notify.failure(`❌ Rejected promise ${number} in ${delay}ms`);
       });
   }
 });
